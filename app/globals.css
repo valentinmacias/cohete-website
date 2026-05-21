@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #06FAC3;
+  --color-primary: #06fac3;
   --font-sans: var(--font-geist-sans), Inter, system-ui, sans-serif;
 }
 
 @utility text-brand-gradient {
   @apply bg-gradient-to-r from-[#06FAC3] to-[#009A78] bg-clip-text text-transparent;
 }
-
 
 body {
   background-color: #030406;
@@ -36,14 +35,46 @@ body {
 
 .stars-bg-dense {
   background-image:
-    radial-gradient(1px 1px at 10px 10px, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 30px 50px, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 70px 15px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 90px 85px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 130px 120px, rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0)),
-    radial-gradient(1.5px 1.5px at 180px 45px, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 220px 200px, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0)),
-    radial-gradient(1.5px 1.5px at 270px 130px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0));
+    radial-gradient(
+      1px 1px at 10px 10px,
+      rgba(255, 255, 255, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      1px 1px at 30px 50px,
+      rgba(255, 255, 255, 0.6),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      1px 1px at 70px 15px,
+      rgba(255, 255, 255, 0.9),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      1px 1px at 90px 85px,
+      rgba(255, 255, 255, 0.5),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      1px 1px at 130px 120px,
+      rgba(255, 255, 255, 0.7),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      1.5px 1.5px at 180px 45px,
+      rgba(255, 255, 255, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      1px 1px at 220px 200px,
+      rgba(255, 255, 255, 0.6),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      1.5px 1.5px at 270px 130px,
+      rgba(255, 255, 255, 0.9),
+      rgba(0, 0, 0, 0)
+    );
   background-size: 280px 280px;
   background-repeat: repeat;
 }
@@ -51,11 +82,14 @@ body {
 /* Green ambient light effects */
 .ambient-green-glow {
   filter: blur(100px);
-  background: radial-gradient(circle, rgba(0, 223, 137, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 223, 137, 0.12) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
@@ -68,4 +102,25 @@ body {
 
 .animate-float-slow {
   animation: float 6s ease-in-out infinite;
+}
+
+/* About & Partners Slider */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Target reducing speeds on lower capacity interactions */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation-play-state: paused;
+  }
 }
