@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #06FAC3;
+  --font-sans: var(--font-geist-sans), Inter, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@utility text-brand-gradient {
+  @apply bg-gradient-to-r from-[#06FAC3] to-[#009A78] bg-clip-text text-transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+body {
+  background-color: #030406;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Starry space background overlay */
+.stars-bg {
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 50px 160px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 80px 120px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 110px 220px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 150px 30px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 200px 150px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 250px 80px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 280px 280px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 310px 180px, #ffffff, rgba(0, 0, 0, 0));
+  background-size: 350px 350px;
+  background-repeat: repeat;
+}
+
+.stars-bg-dense {
+  background-image:
+    radial-gradient(1px 1px at 10px 10px, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 30px 50px, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 70px 15px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 90px 85px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 130px 120px, rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 180px 45px, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 220px 200px, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 270px 130px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0));
+  background-size: 280px 280px;
+  background-repeat: repeat;
+}
+
+/* Green ambient light effects */
+.ambient-green-glow {
+  filter: blur(100px);
+  background: radial-gradient(circle, rgba(0, 223, 137, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
 }
