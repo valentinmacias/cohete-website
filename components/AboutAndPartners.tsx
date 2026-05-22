@@ -29,9 +29,9 @@ export default function PartnersAndAbout() {
     const scrollTrack = trackRef.current;
     if (!scrollTrack) return;
 
-    // Direct mapping of the Liquid speed logic values
-    const durationInSeconds = 25; // Matching default '25' speed
+    const durationInSeconds = 25;
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
     const speedMap: Record<number, number> = {
       25: isSafari ? 1.5 : 0.9,
       35: isSafari ? 1 : 0.65,
@@ -41,13 +41,17 @@ export default function PartnersAndAbout() {
     const speed =
       speedMap[durationInSeconds] ||
       (isSafari ? 40 / durationInSeconds : 25 / durationInSeconds);
+
     let scrollPosition = 0;
     let animationFrameId: number;
 
-    function smoothScroll() {
+    const smoothScroll = () => {
+      if (!scrollTrack) return;
+
       scrollPosition -= speed;
 
       const maxScroll = scrollTrack.scrollWidth / 2;
+
       if (Math.abs(scrollPosition) >= maxScroll) {
         scrollPosition += maxScroll;
       }
@@ -56,7 +60,7 @@ export default function PartnersAndAbout() {
       scrollTrack.style.webkitTransform = `translate3d(${scrollPosition}px, 0, 0)`;
 
       animationFrameId = requestAnimationFrame(smoothScroll);
-    }
+    };
 
     smoothScroll();
 
