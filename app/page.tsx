@@ -2,6 +2,10 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import AboutAndPartners from "@/components/AboutAndPartners";
 import ServicesSection from "@/components/Services";
+import ContactSection from "@/components/ContactSection";
+import ResultsSection from "@/components/ResultsSection";
+import StatsSection from "@/components/StatsSection";
+import PrioritiesSection from "@/components/PrioritiesSection";
 
 export default function Home() {
   return (
@@ -19,6 +23,10 @@ export default function Home() {
       <Hero />
       <AboutAndPartners />
       <ServicesSection />
+      <PrioritiesSection />
+      <StatsSection />
+      <ResultsSection />
+      <ContactSection />
     </div>
   );
 }
