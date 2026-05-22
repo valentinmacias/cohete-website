@@ -9,17 +9,17 @@ interface StatItemProps {
 // Sub-component for individual metric items to keep code clean and manageable
 function StatItem({ number, label, showDivider = true }: StatItemProps) {
   return (
-    <div className="w-full space-y-2">
-      <div className="space-y-1">
-        <span className="text-brand-gradient font-semibold text-4xl sm:text-5xl block tracking-tight">
+    <div className="w-full space-y-12">
+      <div className="space-y-3">
+        <span className="text-brand-gradient font-semibold text-4xl sm:text-6xl block tracking-tight">
           {number}
         </span>
-        <p className="text-white font-medium text-base sm:text-lg tracking-wide">
+        <p className="text-white text-base sm:text-2xl tracking-wide">
           {label}
         </p>
       </div>
       {showDivider && (
-        <hr className="border-t border-white/10 w-full pt-4 mt-4" />
+        <hr className="border-t-2 border-white/50 w-full pt-8 mt-4" />
       )}
     </div>
   );
@@ -30,7 +30,7 @@ export default function StatsSection() {
     <section className="w-full max-w-6xl mx-auto px-6 py-20 text-white font-sans selection:bg-primary/30">
       {/* SECTION HEADER */}
       <div className="w-full text-center mb-16 md:mb-24">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-7xl font-semibold">
           No prometemos,{" "}
           <span className="text-brand-gradient">ejecutamos.</span>
         </h2>
@@ -56,7 +56,7 @@ export default function StatsSection() {
             <img
               src="/imagen 9.png"
               alt="Global operations distribution network map"
-              className="w-full h-auto object-contain max-h-[420px] select-none pointer-events-none filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+              className="w-full h-auto object-contain select-none pointer-events-none"
               draggable={false}
             />
 
