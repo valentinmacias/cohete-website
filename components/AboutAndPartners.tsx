@@ -1,23 +1,69 @@
 "use client";
 
-import React from "react";
+import { useEffect, useRef } from "react";
 
-// Mocking the partner logos data.
-// Replace src paths with your actual logo files in /public
 const partners = [
-  { name: "MiróSol", src: "/mirosol.png" },
-  { name: "Argentina Todo Terreno", src: "/mirosol.png" },
-  { name: "Grafa70", src: "/mirosol.png" },
-  { name: "Next+", src: "/mirosol.png" },
-  { name: "Focus", src: "/mirosol.png" },
-  { name: "Umbrella", src: "/mirosol.png" },
-  { name: "Gauci", src: "/mirosol.png" },
-  { name: "Gilipollas", src: "/mirosol.png" },
+  { name: "Bathinda", src: "/logos/BATHINDA.webp" },
+  { name: "Flexigom", src: "/logos/FLEXIGOM.webp" },
+  { name: "Gaudi", src: "/logos/GAUDI.webp" },
+  { name: "Gianni di Paolo", src: "/logos/Gianni di Paolo.webp" },
+  { name: "Gilipollas", src: "/logos/GILLIPOLLAS.webp" },
+  { name: "Grafa70", src: "/logos/GRAFA70.webp" },
+  { name: "IPC Pools", src: "/logos/IPC POOLS.webp" },
+  { name: "Logo ATT", src: "/logos/LOGO ATT.webp" },
+  { name: "MiróSol", src: "/logos/MIROSOL.webp" },
+  { name: "Noor", src: "/logos/NOOR.webp" },
+  { name: "Oh Wear", src: "/logos/OH WEAR.webp" },
+  { name: "Ombu", src: "/logos/OMBU.webp" },
+  { name: "Plenty", src: "/logos/PLENTY.webp" },
+  { name: "Sofart", src: "/logos/SOFART.webp" },
+  { name: "Wegolf", src: "/logos/WEGOLF.webp" },
+  { name: "Zorba", src: "/logos/ZORBA.webp" },
 ];
-
 export default function PartnersAndAbout() {
-  // Duplicate the array to create a seamless infinite marquee loops
-  const marqueeLogos = [...partners, ...partners, ...partners];
+  // Only duplicate once since the loop calculation relies on maxScroll = scrollWidth / 2
+  const marqueeLogos = [...partners, ...partners];
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollTrack = trackRef.current;
+    if (!scrollTrack) return;
+
+    // Direct mapping of the Liquid speed logic values
+    const durationInSeconds = 25; // Matching default '25' speed
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const speedMap: Record<number, number> = {
+      25: isSafari ? 1.5 : 0.9,
+      35: isSafari ? 1 : 0.65,
+      45: isSafari ? 0.65 : 0.45,
+    };
+
+    const speed =
+      speedMap[durationInSeconds] ||
+      (isSafari ? 40 / durationInSeconds : 25 / durationInSeconds);
+    let scrollPosition = 0;
+    let animationFrameId: number;
+
+    function smoothScroll() {
+      scrollPosition -= speed;
+
+      const maxScroll = scrollTrack.scrollWidth / 2;
+      if (Math.abs(scrollPosition) >= maxScroll) {
+        scrollPosition += maxScroll;
+      }
+
+      scrollTrack.style.transform = `translate3d(${scrollPosition}px, 0, 0)`;
+      scrollTrack.style.webkitTransform = `translate3d(${scrollPosition}px, 0, 0)`;
+
+      animationFrameId = requestAnimationFrame(smoothScroll);
+    }
+
+    smoothScroll();
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   return (
     <section className="w-full relative z-10 bg-transparent overflow-hidden stars-bg-dense pb-28">
@@ -35,7 +81,10 @@ export default function PartnersAndAbout() {
         <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#030406] to-transparent z-10 pointer-events-none" />
 
         {/* Moving track */}
-        <div className="flex gap-16 md:gap-24 items-center shrink-0 animate-marquee whitespace-nowrap">
+        <div
+          ref={trackRef}
+          className="flex gap-16 md:gap-24 items-center shrink-0 whitespace-nowrap"
+        >
           {marqueeLogos.map((logo, index) => (
             <div
               key={`${logo.name}-${index}`}
