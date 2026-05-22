@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ResultsSection() {
   return (
-    <section className="py-24 text-white font-sans">
+    <section className="pt-24 text-white">
       {/* Main Grid Header */}
       <div className="mb-20">
         <h2 className="text-4xl sm:text-5xl md:text-7xl text-center font-semibold tracking-tight text-white leading-tight">
@@ -18,65 +18,48 @@ export default function ResultsSection() {
       <div className="flex flex-col divide-y divide-white/[0.08]">
         {/* ROW 01: AGREGAR */}
         <ResultItem
-          title="AGREGAR"
-          metric="$1.347.529 USD"
-          timeframe="EN 90 DÍAS"
-          flagIcon={
-            <Image width={20} height={20} src="/flag 1.png" alt="USA" />
+          title={
+            <>
+              AGREGAR{" "}
+              <span className="block text-brand-gradient">$1.347.529 USD</span>{" "}
+              EN 90 DÍAS
+            </>
           }
+          flagIcon="/flag 1.png"
           marketText="Para Marca Americana"
           timelineText="Primeros 90 Días"
-          rightContent={
-            <img
-              src="/Result 1.png"
-              alt="Analytics data timeline showcase"
-              className="w-full h-auto object-contain"
-            />
-          }
+          image="/Result 1.png"
         />
 
         {/* ROW 02: ESCALAR */}
         <ResultItem
-          title="ESCALAR"
-          metric="+7.000 ÓRDENES"
-          timeframe="EN 30 DÍAS"
-          flagIcon={
-            <Image
-              width={20}
-              height={20}
-              src="/united-kingdom 1.png"
-              alt="UK"
-            />
+          title={
+            <>
+              <span className="text-brand-gradient">ESCALAR</span> A MÁS DE{" "}
+              <span className="block text-brand-gradient">+7.000 órdenes</span>{" "}
+              EN 30 DÍAS
+            </>
           }
+          flagIcon="/united-kingdom 1.png"
           marketText="Para Marca Inglesa"
           timelineText="Primeros 30 Días"
-          rightContent={
-            <img
-              src="/Result 2.png"
-              alt="Sales growth data metrics display"
-              className="w-full h-auto object-contain"
-            />
-          }
+          image="/Result 2.png"
           flip={true}
         />
 
         {/* ROW 03: ESCALAR */}
         <ResultItem
-          title="ESCALAR"
-          metric="+7.000 ÓRDENES"
-          timeframe="EN 30 DÍAS"
-          flagIcon={
-            <Image width={20} height={20} src="/world 1.png" alt="UK" />
+          title={
+            <>
+              <span className="text-brand-gradient">Triplicar</span> tu{" "}
+              <span className="block text-brand-gradient">facturación</span>
+              en 30 días
+            </>
           }
-          marketText="Para Marca Inglesa"
+          flagIcon="/world 1.png"
+          marketText="Para Marca Argentina"
           timelineText="Primeros 30 Días"
-          rightContent={
-            <img
-              src="/Result 2.png"
-              alt="Sales growth data metrics display"
-              className="w-full h-auto object-contain"
-            />
-          }
+          image="/Result 3.png"
         />
       </div>
     </section>

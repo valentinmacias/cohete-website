@@ -22,8 +22,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutAndPartners />
-      <ServicesSection />
       <PrioritiesSection />
+      <ServicesSection />
       <StatsSection />
       <ResultsSection />
       <ContactSection />

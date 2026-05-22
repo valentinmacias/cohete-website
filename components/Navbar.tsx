@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./ui/Button";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function Navbar() {
     <>
       {/* Desktop & Mobile Closed Navbar */}
       <nav className="w-full max-w-[1200px] mx-auto mt-6 px-4 md:px-6 z-40 relative">
-        <div className="border border-white/10 backdrop-blur-md bg-[#0a0a0c]/60 rounded-2xl md:rounded-[20px] px-6 py-4 flex items-center justify-between transition-all duration-300">
+        <div className="border border-white/20 rounded-2xl px-6 py-6 flex items-center justify-between transition-all duration-300">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -20,39 +21,36 @@ export default function Navbar() {
               width={34}
               height={41}
               priority
-              className="h-8 w-auto md:h-10"
+              className="h-8 w-auto md:h-12"
             />
-            <Image
-              src="/logo-text.svg"
-              alt="Cohete Text"
-              width={75}
-              height={19}
-              priority
-              className="h-4 w-auto md:h-5"
-            />
+            <span className="text-2xl font-medium">cohete</span>
           </Link>
 
           {/* Center Links - Desktop only */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-100">
-            <Link href="#servicios" className="hover:text-[#00df89] transition-colors">
-              Servicios <span className="text-white/80 ml-1">/</span>
+          <div className="hidden md:flex items-center gap-8 text-base">
+            <Link
+              href="#servicios"
+              className="hover:text-[#00df89] transition-colors"
+            >
+              Servicios <span className="text-white/90 ml-1">/</span>
             </Link>
-            <Link href="#casos-de-estudio" className="hover:text-[#00df89] transition-colors">
-              Casos de Estudio <span className="text-white/80 ml-1">/</span>
+            <Link
+              href="#casos-de-estudio"
+              className="hover:text-[#00df89] transition-colors"
+            >
+              Casos de Estudio <span className="text-white/90 ml-1">/</span>
             </Link>
-            <Link href="#contacto" className="hover:text-[#00df89] transition-colors">
-              Contacto <span className="text-white/80 ml-1">/</span>
+            <Link
+              href="#contacto"
+              className="hover:text-[#00df89] transition-colors"
+            >
+              Contacto <span className="text-white/90 ml-1">/</span>
             </Link>
           </div>
 
           {/* Button - Desktop only */}
           <div className="hidden md:block">
-            <Link
-              href="#propuesta"
-              className="inline-block border border-[#00df89]/30 text-primary hover:bg-primary/5 text-xs uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,223,137,0.15)]"
-            >
-              Quiero recibir una propuesta
-            </Link>
+            <Button size="sm">Quiero recibir una propuesta</Button>
           </div>
 
           {/* Menú Link - Mobile only */}

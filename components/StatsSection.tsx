@@ -19,7 +19,7 @@ function StatItem({ number, label, showDivider = true }: StatItemProps) {
         </p>
       </div>
       {showDivider && (
-        <hr className="border-t-2 border-white/50 w-full pt-8 mt-4" />
+        <hr className="border-t-2 border-white/30 w-full pt-8 mt-4" />
       )}
     </div>
   );
@@ -27,7 +27,7 @@ function StatItem({ number, label, showDivider = true }: StatItemProps) {
 
 export default function StatsSection() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 py-20 text-white font-sans selection:bg-primary/30">
+    <section className="w-full max-w-[1200px] mx-auto px-6 py-16 text-white selection:bg-primary/30">
       {/* SECTION HEADER */}
       <div className="w-full text-center mb-16 md:mb-24">
         <h2 className="text-3xl sm:text-4xl md:text-7xl font-semibold">
