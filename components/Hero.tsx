@@ -3,7 +3,7 @@ import Button from "./ui/Button";
 
 export default function Hero() {
   return (
-    <main className="flex-1 w-full max-w-[1200px] mx-auto px-6 md:px-8 pt-12 pb-14 md:pb-0 flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+    <main className="flex-1 w-full max-w-[1200px] mx-auto mt-[120px] px-6 md:px-8 pt-12 pb-14 md:pb-0 flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
       {/* Left Text Column */}
       <div className="flex-1 max-w-[620px] flex flex-col items-start text-left">
         <h1 className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-4 select-none">
