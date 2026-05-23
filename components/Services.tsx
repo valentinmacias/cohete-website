@@ -2,7 +2,10 @@ import ServiceCard from "./ServiceCard";
 
 export default function ServicesPage() {
   return (
-    <section className="container mx-auto px-6 pt-10 md:pt-24 pb-8 md:pb-18">
+    <section
+      id="service-section"
+      className="container mx-auto px-6 pt-10 md:pt-24 pb-8 md:pb-18"
+    >
       <h1 className="text-center text-[40px] sm:text-5xl md:text-7xl font-bold tracking-tight leading-[120%] mb-4 select-none">
         Un <span className="text-brand-gradient">teléfono</span>, para todos tus{" "}
         <span className="text-brand-gradient">problemas</span>

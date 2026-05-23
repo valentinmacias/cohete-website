@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
@@ -10,20 +10,39 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
+import { useScrollTo } from "@/hooks/useScrollTo";
 
 export default function Navbar() {
+  const { scrollTo } = useScrollTo();
   const [isOpen, setIsOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
+  const isNavigatingRef = useRef<boolean>(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
+    if (isNavigatingRef.current) return;
+
     const previous = scrollY.getPrevious() ?? 0;
+
+    // 2. Normal user scroll logic
     if (latest > previous && latest > 150) {
       setHidden(true);
     } else {
       setHidden(false);
     }
   });
+
+  const handleNavClick = (target: string): void => {
+    setIsOpen(false);
+    setHidden(true);
+    isNavigatingRef.current = true;
+
+    scrollTo(target);
+
+    setTimeout(() => {
+      isNavigatingRef.current = false;
+    }, 1200);
+  };
 
   return (
     <>
@@ -54,35 +73,40 @@ export default function Navbar() {
 
             {/* Center Links - Desktop only */}
             <div className="hidden md:flex items-center gap-8 text-base">
-              <Link
-                href="#servicios"
-                className="hover:text-[#00df89] transition-colors"
+              <button
+                onClick={() => handleNavClick("#service-section")}
+                className="hover:text-primary transition-colors cursor-pointer"
               >
                 Servicios <span className="text-white/90 ml-1">/</span>
-              </Link>
-              <Link
-                href="#casos-de-estudio"
-                className="hover:text-[#00df89] transition-colors"
+              </button>
+              <button
+                onClick={() => handleNavClick("#results-section")}
+                className="hover:text-primary transition-colors cursor-pointer"
               >
                 Casos de Estudio <span className="text-white/90 ml-1">/</span>
-              </Link>
-              <Link
-                href="#contacto"
-                className="hover:text-[#00df89] transition-colors"
+              </button>
+              <button
+                onClick={() => handleNavClick("#contact-section")}
+                className="hover:text-primary transition-colors cursor-pointer"
               >
                 Contacto <span className="text-white/90 ml-1">/</span>
-              </Link>
+              </button>
             </div>
 
             {/* Button - Desktop only */}
             <div className="hidden md:block">
-              <Button size="sm">Quiero recibir una propuesta</Button>
+              <Button
+                onClick={() => handleNavClick("#contact-section")}
+                size="sm"
+              >
+                Quiero recibir una propuesta
+              </Button>
             </div>
 
             {/* Menú Link - Mobile only */}
             <button
               onClick={() => setIsOpen(true)}
-              className="md:hidden text-sm font-medium text-white underline decoration-white/40 underline-offset-4 hover:text-[#00df89] transition-colors"
+              className="md:hidden text-sm font-medium text-white underline decoration-white/40 underline-offset-4 hover:text-primary transition-colors"
             >
               Menú
             </button>
@@ -135,7 +159,7 @@ export default function Navbar() {
                 {/* Close Button (X) */}
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-white hover:text-[#00df89] transition-colors p-1"
+                  className="text-white hover:text-primary transition-colors p-1"
                   aria-label="Cerrar menú"
                 >
                   <svg
@@ -156,32 +180,33 @@ export default function Navbar() {
 
               {/* Menu Links */}
               <div className="flex flex-col gap-6 my-12 pl-2 relative z-10">
-                <Link
-                  href="#servicios"
-                  onClick={() => setIsOpen(false)}
-                  className="text-xl font-medium text-white hover:text-[#00df89] transition-colors"
+                <button
+                  onClick={() => handleNavClick("#service-section")}
+                  className="text-left text-xl font-medium text-white hover:text-primary transition-colors"
                 >
                   Servicios <span className="text-white/90 ml-2">/</span>
-                </Link>
-                <Link
-                  href="#casos-de-estudio"
-                  onClick={() => setIsOpen(false)}
-                  className="text-xl font-medium text-white hover:text-[#00df89] transition-colors"
+                </button>
+                <button
+                  onClick={() => handleNavClick("#results-section")}
+                  className="text-left text-xl font-medium text-white hover:text-primary transition-colors"
                 >
                   Casos de Estudio <span className="text-white/90 ml-2">/</span>
-                </Link>
-                <Link
-                  href="#contacto"
-                  onClick={() => setIsOpen(false)}
-                  className="text-xl font-medium text-white hover:text-[#00df89] transition-colors"
+                </button>
+                <button
+                  onClick={() => handleNavClick("#contact-section")}
+                  className="text-left text-xl font-medium text-white hover:text-primary transition-colors"
                 >
                   Contacto <span className="text-white/90 ml-2">/</span>
-                </Link>
+                </button>
               </div>
 
               {/* CTA Button */}
               <div className="w-full mt-auto relative z-10">
-                <Button size="md" className="w-full">
+                <Button
+                  size="md"
+                  className="w-full"
+                  onClick={() => handleNavClick("#contact-section")}
+                >
                   Quiero recibir una propuesta
                 </Button>
               </div>

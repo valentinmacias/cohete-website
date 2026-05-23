@@ -9,7 +9,7 @@ import PrioritiesSection from "@/components/PrioritiesSection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#030406] text-white flex flex-col overflow-hidden">
+    <div className="relative min-h-screen bg-[#030406] text-white flex flex-col">
       {/* Background Stars Layers */}
       <div className="absolute inset-0 stars-bg pointer-events-none z-0" />
       <div className="absolute inset-0 stars-bg-dense pointer-events-none z-0 opacity-60" />

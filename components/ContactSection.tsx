@@ -16,7 +16,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 md:px-0 pt-14 pb-10 lg:py-25 text-white selection:bg-[#00ffcc]/30">
+    <section
+      id="contact-section"
+      className="w-full max-w-6xl mx-auto px-6 md:px-0 pt-14 pb-10 lg:py-25 text-white selection:bg-[#00ffcc]/30"
+    >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
         {/* LEFT COLUMN: HERO HEADLINE & FLOATING ROCKET MOCKUP */}
         <div className="md:col-span-5 flex flex-col">

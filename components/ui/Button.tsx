@@ -18,7 +18,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      className={`inline-block border border-primary/30 bg-[#0c1f1a] text-primary hover:border-primary hover:bg-[#00ffcc]/5 tracking-widest uppercase rounded-full whitespace-nowrap leading-normal transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(0,255,204,0.2)] ${sizeStyle[size] || sizeStyle.md} ${className}`}
+      className={`inline-block border font-medium border-primary/30 bg-[#0c1f1a] text-primary hover:border-primary hover:bg-[#00ffcc]/5 tracking-widest uppercase rounded-full whitespace-nowrap leading-normal transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(0,255,204,0.2)] ${sizeStyle[size] || sizeStyle.md} ${className}`}
     >
       {children}
     </button>

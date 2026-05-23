@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
 import ResultCard from "./ResultCard";
-import Image from "next/image";
 
 export default function ResultsSection() {
   return (
-    <section className="pt-6 md:pt-24 text-white border-b border-b-gray-800">
+    <section
+      id="results-section"
+      className="pt-6 md:pt-24 text-white border-b border-b-gray-800"
+    >
       {/* Main Grid Header */}
       <div className="mb-6 md:mb-20">
         <h2 className="text-4xl sm:text-5xl md:text-7xl px-20 md:px-6 text-center font-semibold tracking-tight text-white leading-tight">
