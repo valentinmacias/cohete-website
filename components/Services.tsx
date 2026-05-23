@@ -11,7 +11,7 @@ export default function ServicesPage() {
         <span className="text-brand-gradient">problemas</span>
       </h1>
 
-      <div className="bg-black mt-[60px] flex flex-col items-center justify-center gap-8 md:px-4">
+      <div className="mt-[60px] flex flex-col items-center justify-center gap-8 md:px-4">
         <ServiceCard
           title="01. Sitios que Convierten"
           image="/Studio-Display.png"

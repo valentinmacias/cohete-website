@@ -14,69 +14,18 @@ body {
   color: #ffffff;
   overflow-x: hidden;
   font-family: var(--font-sherika);
+  position: relative;
 }
 
-/* Starry space background overlay */
-.stars-bg {
-  background-image:
-    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(1.5px 1.5px at 50px 160px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 80px 120px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(1.5px 1.5px at 110px 220px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 150px 30px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 200px 150px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(1.5px 1.5px at 250px 80px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(1px 1px at 280px 280px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(1.5px 1.5px at 310px 180px, #ffffff, rgba(0, 0, 0, 0));
-  background-size: 350px 350px;
-  background-repeat: repeat;
-}
-
-.stars-bg-dense {
-  background-image:
-    radial-gradient(
-      1px 1px at 10px 10px,
-      rgba(255, 255, 255, 0.8),
-      rgba(0, 0, 0, 0)
-    ),
-    radial-gradient(
-      1px 1px at 30px 50px,
-      rgba(255, 255, 255, 0.6),
-      rgba(0, 0, 0, 0)
-    ),
-    radial-gradient(
-      1px 1px at 70px 15px,
-      rgba(255, 255, 255, 0.9),
-      rgba(0, 0, 0, 0)
-    ),
-    radial-gradient(
-      1px 1px at 90px 85px,
-      rgba(255, 255, 255, 0.5),
-      rgba(0, 0, 0, 0)
-    ),
-    radial-gradient(
-      1px 1px at 130px 120px,
-      rgba(255, 255, 255, 0.7),
-      rgba(0, 0, 0, 0)
-    ),
-    radial-gradient(
-      1.5px 1.5px at 180px 45px,
-      rgba(255, 255, 255, 0.8),
-      rgba(0, 0, 0, 0)
-    ),
-    radial-gradient(
-      1px 1px at 220px 200px,
-      rgba(255, 255, 255, 0.6),
-      rgba(0, 0, 0, 0)
-    ),
-    radial-gradient(
-      1.5px 1.5px at 270px 130px,
-      rgba(255, 255, 255, 0.9),
-      rgba(0, 0, 0, 0)
-    );
-  background-size: 280px 280px;
-  background-repeat: repeat;
+/* Container for canvas background */
+.space-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Green ambient light effects */
@@ -90,14 +39,8 @@ body {
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 
 .animate-float-slow {
@@ -106,19 +49,14 @@ body {
 
 /* About & Partners Slider */
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-33.333%); }
 }
 
 @utility animate-marquee {
   animation: marquee 30s linear infinite;
 }
 
-/* Target reducing speeds on lower capacity interactions */
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
     animation-play-state: paused;
