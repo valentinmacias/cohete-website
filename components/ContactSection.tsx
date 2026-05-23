@@ -9,10 +9,41 @@ export default function ContactSection() {
     telefono: "",
     mensaje: "",
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form data submitted:", formData);
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Message sent successfully 🚀");
+
+        setFormData({
+          queVendes: "",
+          instagram: "",
+          telefono: "",
+          mensaje: "",
+        });
+      } else {
+        alert("Something went wrong");
+      }
+    } catch (err) {
+      alert("Error sending message");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -121,8 +152,9 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   className="inline-block border border-primary/70 bg-gradient-to-r from-[#06FAC3]/10 to-[#05C499]/10 hover:bg-[#00ffcc]/20 text-[#00ffcc] text-sm leading-normal tracking-widest uppercase py-3.5 px-7 rounded-full hover:shadow-[0_0_20px_rgba(0,255,204,0.2)] transition-all duration-300 transform active:scale-95 whitespace-nowrap cursor-pointer"
+                  disabled={loading}
                 >
-                  QUIERO RECIBIR UNA PROPUESTA
+                  {loading ? "ENVIANDO..." : "QUIERO RECIBIR UNA PROPUESTA"}
                 </button>
               </div>
             </form>
