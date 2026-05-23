@@ -26,16 +26,16 @@ export default function ResultCard({
   return (
     <div>
       <div
-        className={`max-w-6xl mx-auto px-6 flex flex-col-reverse md:flex-col items-center justify-between gap-12 pt-6 pb-6 md:pb-12 text-white ${flip ? "md:flex-row-reverse" : "md:flex-row"}`}
+        className={`max-w-6xl mx-auto px-6 md:px-0 flex flex-col-reverse md:flex-col items-center justify-between gap-12 pt-6 pb-6 md:pb-12 text-white ${flip ? "md:flex-row-reverse" : "md:flex-row"}`}
       >
         {/* Left Column: Typography Details Block (Takes exactly 50% width on desktop) */}
-        <div className="w-full md:w-1/2 flex flex-col justify-between space-y-8">
-          <div className="mb-4 space-y-12">
-            <h3 className="text-3xl md:text-[44px] font-semibold uppercase leading-[130%] mb-4">
+        <div className="w-full md:w-1/2 flex flex-col justify-between">
+          <div className="mb-4">
+            <h3 className="text-3xl md:text-[44px] font-semibold uppercase leading-[130%] mb-4 md:mb-13">
               {title}
             </h3>
 
-            <div className="space-y-3 pt-2 text-base md:text-xl text-gray-200">
+            <div className="space-y-3 text-base md:text-xl text-gray-200">
               <div className="flex items-center gap-5">
                 <Image width={20} height={20} src={flagIcon} alt="Flag Icon" />
                 <p className="tracking-wide">{marketText}</p>
@@ -54,7 +54,7 @@ export default function ResultCard({
           </div>
 
           {/* Action Call Button */}
-          <div className="pt-4">
+          <div className="mt-4 md:mt-8">
             <Button onClick={onCtaClick}>{ctaText}</Button>
           </div>
         </div>

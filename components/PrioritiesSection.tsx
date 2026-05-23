@@ -15,7 +15,7 @@ export default function Priorities() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-[1200px] mx-auto px-6 md:px-8 py-10 md:py-28 flex flex-col md:flex-row gap-10 md:gap-24">
+      <div className="relative z-20 w-full max-w-[1200px] mx-auto px-6 md:px-8 py-10 md:pt-24 md:pb-28 flex flex-col md:flex-row gap-10 md:gap-24">
         {/* Left — Title */}
         <div className="flex-shrink-0">
           <h2 className="text-[42px] sm:text-5xl md:text-6xl lg:text-[70px] font-medium leading-[120%] text-white">

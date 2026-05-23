@@ -29,7 +29,7 @@ export default function ServiceCard({
       md:bg-[url('/Union.png')]
       "
     >
-      <div className="w-full flex flex-col-reverse md:flex-row gap-8 md:gap-10 px-5 py-7 md:px-12 md:py-20">
+      <div className="w-full flex flex-col-reverse md:flex-row gap-3 md:gap-10 px-5 py-7 md:px-12 md:py-20">
         <div
           className={`md:w-[50%] flex flex-col justify-between h-full md:pt-4 ${leftSectionClassName}`}
         >
@@ -51,16 +51,10 @@ export default function ServiceCard({
         </div>
 
         <div
-          className={`md:w-[50%] w-full flex items-center justify-center min-h-[280px] md:min-h-full ${rightSectionClassName}`}
+          className={`md:w-[50%] w-full flex items-center justify-center min-h-[280px] ${rightSectionClassName}`}
         >
-          <div className="w-full h-full relative">
-            <Image
-              src={image}
-              alt=""
-              width={295}
-              height={226}
-              className="w-full h-full object-contain"
-            />
+          <div className="relative w-full min-h-[230px] md:min-h-full">
+            <Image src={image} alt="" fill className="w-full object-contain" />
           </div>
         </div>
       </div>

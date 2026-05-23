@@ -72,7 +72,7 @@ export default function PartnersAndAbout() {
   return (
     <section className="w-full relative z-10 bg-transparent overflow-hidden stars-bg-dense pb-14 lg:pb-28">
       {/* --- SECTION 1: TRUSTED BY / MARQUEE LOGOS --- */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8 mb-4 md:mb-14">
+      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8 mb-4">
         <h2 className="text-[22px] md:text-[38px] md:font-medium tracking-wide">
           Confían en Nosotros
         </h2>
@@ -87,30 +87,17 @@ export default function PartnersAndAbout() {
         {/* Moving track */}
         <div
           ref={trackRef}
-          className="flex gap-16 md:gap-24 items-center shrink-0 whitespace-nowrap"
+          className="flex gap-8 items-center shrink-0 whitespace-nowrap"
         >
           {marqueeLogos.map((logo, index) => (
             <div
               key={`${logo.name}-${index}`}
               className="flex items-center justify-center"
             >
-              {/* Using standard img tags for easier flexible width setups inside layouts like marquee layouts, or use Next Image */}
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="w-28 lg:w-32 max-h-8 lg:max-h-auto lg:h-auto aspect-square object-contain"
-                onError={(e) => {
-                  // Fallback string if image assets are missing during build setup
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = "none";
-                  const parent = target.parentElement;
-                  if (parent) {
-                    const textNode = document.createTextNode(logo.name);
-                    parent.appendChild(textNode);
-                    parent.className =
-                      "text-zinc-500 font-bold tracking-wider text-sm md:text-base";
-                  }
-                }}
+                className="w-28 lg:w-32 max-h-8 lg:max-h-auto lg:h-auto object-contain"
               />
             </div>
           ))}

@@ -16,18 +16,18 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 pt-14 pb-10 lg:py-25 text-white selection:bg-[#00ffcc]/30">
+    <section className="w-full max-w-6xl mx-auto px-6 md:px-0 pt-14 pb-10 lg:py-25 text-white selection:bg-[#00ffcc]/30">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
         {/* LEFT COLUMN: HERO HEADLINE & FLOATING ROCKET MOCKUP */}
-        <div className="md:col-span-5 flex flex-col space-y-12">
-          <h2 className="text-4xl sm:text-5xl font-semibold tracking-wide text-white uppercase leading-[1.1] mb-0">
+        <div className="md:col-span-5 flex flex-col">
+          <h2 className="text-4xl sm:text-5xl font-semibold tracking-wide text-white uppercase leading-[1.1]">
             HAGAMOS <br />
             <span className="text-brand-gradient">DESPEGAR</span> TU <br />
             NEGOCIO.
           </h2>
 
           {/* Hardware accelerated container for the rocket mockup graphic */}
-          <div className="hidden md:flex relative w-full max-w-[320px] mx-auto md:mx-0 aspect-square items-center justify-center">
+          <div className="md:mt-12 hidden md:flex relative w-full max-w-[320px] mx-auto md:mx-0 aspect-square items-center justify-center">
             <img
               src="/Rocket_dark 1.png"
               alt="Propulsion rocket illustration"
