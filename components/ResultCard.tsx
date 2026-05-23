@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./ui/Button";
 import Image from "next/image";
 
-interface ResultItemProps {
+interface ResultCardProps {
   title: React.ReactNode;
   flagIcon: string;
   marketText: string;
@@ -13,7 +13,7 @@ interface ResultItemProps {
   flip?: boolean;
 }
 
-export default function ResultItem({
+export default function ResultCard({
   title,
   flagIcon,
   marketText,
@@ -22,17 +22,17 @@ export default function ResultItem({
   onCtaClick,
   image,
   flip,
-}: ResultItemProps) {
+}: ResultCardProps) {
   return (
     <div>
       <div
-        className={`max-w-6xl mx-auto flex flex-col items-center justify-between gap-12 pt-6 pb-12 text-white ${flip ? "md:flex-row-reverse" : "md:flex-row"}`}
+        className={`max-w-6xl mx-auto px-6 flex flex-col-reverse md:flex-col items-center justify-between gap-12 pt-6 pb-6 md:pb-12 text-white ${flip ? "md:flex-row-reverse" : "md:flex-row"}`}
       >
         {/* Left Column: Typography Details Block (Takes exactly 50% width on desktop) */}
         <div className="w-full md:w-1/2 flex flex-col justify-between space-y-8">
-          <div className="space-y-12">
-            <h3 className="text-3xl md:text-[44px] font-semibold uppercase leading-[130%]">
-              {title} <br />
+          <div className="mb-4 space-y-12">
+            <h3 className="text-3xl md:text-[44px] font-semibold uppercase leading-[130%] mb-4">
+              {title}
             </h3>
 
             <div className="space-y-3 pt-2 text-base md:text-xl text-gray-200">

@@ -16,18 +16,18 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full max-w-6xl mx-auto py-25 text-white selection:bg-[#00ffcc]/30">
+    <section className="w-full max-w-6xl mx-auto px-6 pt-14 pb-10 lg:py-25 text-white selection:bg-[#00ffcc]/30">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
         {/* LEFT COLUMN: HERO HEADLINE & FLOATING ROCKET MOCKUP */}
         <div className="md:col-span-5 flex flex-col space-y-12">
-          <h2 className="text-4xl sm:text-5xl font-semibold tracking-wide text-white uppercase leading-[1.1]">
+          <h2 className="text-4xl sm:text-5xl font-semibold tracking-wide text-white uppercase leading-[1.1] mb-0">
             HAGAMOS <br />
             <span className="text-brand-gradient">DESPEGAR</span> TU <br />
             NEGOCIO.
           </h2>
 
           {/* Hardware accelerated container for the rocket mockup graphic */}
-          <div className="relative w-full max-w-[320px] mx-auto md:mx-0 aspect-square flex items-center justify-center">
+          <div className="hidden md:flex relative w-full max-w-[320px] mx-auto md:mx-0 aspect-square items-center justify-center">
             <img
               src="/Rocket_dark 1.png"
               alt="Propulsion rocket illustration"
@@ -39,13 +39,13 @@ export default function ContactSection() {
 
         {/* RIGHT COLUMN: HIGH-CONVERSION DATA FORM CARD */}
         <div className="md:col-span-7 w-full">
-          <div className="w-full bg-[#1F2123]/90 border border-white/10 rounded-2xl p-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] backdrop-blur-md">
-            <div className="mb-12">
-              <h3 className="text-xl sm:text-[32px] font-medium tracking-wide uppercase text-white mb-4">
+          <div className="w-full bg-[#1F2123]/90 border border-white/10 rounded-2xl p-6 md:p-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] backdrop-blur-md">
+            <div className="mb-8 md:mb-12">
+              <h3 className="text-[28px] sm:text-[32px] font-medium tracking-wide uppercase text-white mb-4">
                 COMPLETÁ EL FORMULARIO
               </h3>
               <p className="text-gray-300 text-sm">
-                No prometemos. Ejecutamos.
+                Nos contactaremos en menos de 24hs
               </p>
             </div>
 
@@ -124,6 +124,15 @@ export default function ContactSection() {
               </div>
             </form>
           </div>
+        </div>
+
+        <div className="md:hidden relative w-full max-w-[500px] mx-auto md:mx-0 flex items-center">
+          <img
+            src="/Rocket_dark 1.png"
+            alt="Propulsion rocket illustration"
+            className="w-[70%] h-fit object-contain"
+            style={{ animationDuration: "4s" }}
+          />
         </div>
       </div>
     </section>

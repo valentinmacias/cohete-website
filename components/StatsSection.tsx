@@ -9,17 +9,17 @@ interface StatItemProps {
 // Sub-component for individual metric items to keep code clean and manageable
 function StatItem({ number, label, showDivider = true }: StatItemProps) {
   return (
-    <div className="w-full space-y-12">
+    <div className="w-full space-y-6 md:space-y-12">
       <div className="space-y-3">
-        <span className="text-brand-gradient font-semibold text-4xl sm:text-6xl block tracking-tight">
+        <span className="text-brand-gradient font-semibold text-5xl md:text-6xl block tracking-tight">
           {number}
         </span>
-        <p className="text-white text-base sm:text-2xl tracking-wide">
+        <p className="text-white text-base md:text-2xl tracking-wide">
           {label}
         </p>
       </div>
       {showDivider && (
-        <hr className="border-t-2 border-white/30 w-full pt-8 mt-4" />
+        <hr className="border-t-2 border-white/30 w-full pt-2 md:pt-8 mt-4" />
       )}
     </div>
   );
@@ -30,7 +30,7 @@ export default function StatsSection() {
     <section className="w-full max-w-[1200px] mx-auto px-6 py-16 text-white selection:bg-primary/30">
       {/* SECTION HEADER */}
       <div className="w-full text-center mb-16 md:mb-24">
-        <h2 className="text-3xl sm:text-4xl md:text-7xl font-semibold">
+        <h2 className="text-4xl md:text-7xl font-semibold">
           No prometemos,{" "}
           <span className="text-brand-gradient">ejecutamos.</span>
         </h2>
@@ -39,7 +39,7 @@ export default function StatsSection() {
       {/* STRATEGIC LAYOUT GRID */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
         {/* LEFT COLUMN: METRICS STACK (Spans 5 out of 12 columns on desktop) */}
-        <div className="md:col-span-5 flex flex-col space-y-6 md:pr-4">
+        <div className="order-last md:order-first md:col-span-5 flex flex-col space-y-6 md:pr-4">
           <StatItem number="+15.000" label="Anuncios Lanzados" />
           <StatItem number="+250" label="Sitios Webs Creados" />
           <StatItem

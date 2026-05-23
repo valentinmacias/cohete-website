@@ -2,7 +2,7 @@ export default function Button({
   size = "md",
   children,
   onClick,
-  className,
+  className = "",
 }: {
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
@@ -11,7 +11,7 @@ export default function Button({
 }) {
   const sizeStyle = {
     sm: "text-sm py-3 px-4",
-    md: "text-base py-3.5 px-6",
+    md: "text-sm md:text-base py-3.5 px-6",
     lg: "text-lg py-5 px-6",
   };
 

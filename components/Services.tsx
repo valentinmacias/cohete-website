@@ -2,13 +2,13 @@ import ServiceCard from "./ServiceCard";
 
 export default function ServicesPage() {
   return (
-    <section className="container mx-auto px-6 pt-24 pb-18">
+    <section className="container mx-auto px-6 pt-10 md:pt-24 pb-8 md:pb-18">
       <h1 className="text-center text-[40px] sm:text-5xl md:text-7xl font-bold tracking-tight leading-[120%] mb-4 select-none">
         Un <span className="text-brand-gradient">teléfono</span>, para todos tus{" "}
         <span className="text-brand-gradient">problemas</span>
       </h1>
 
-      <div className="bg-black mt-[60px] flex flex-col items-center justify-center gap-8 px-4">
+      <div className="bg-black mt-[60px] flex flex-col items-center justify-center gap-8 md:px-4">
         <ServiceCard
           title="01. Sitios que Convierten"
           image="/Studio-Display.png"
@@ -86,8 +86,8 @@ export default function ServicesPage() {
         <ServiceCard
           title="04. Chatbots con Inteligencia Artificial"
           image="/image 7.png"
-          leftSectionClassName="!w-[67%]"
-          rightSectionClassName="!w-[33%]"
+          leftSectionClassName="md:!w-[67%]"
+          rightSectionClassName="!w-[50%] mx-auto md:mx-0 md:!w-[33%]"
         >
           <p>
             Desarrollamos nuestra propia plataforma de chatbots con IA,

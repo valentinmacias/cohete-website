@@ -70,10 +70,10 @@ export default function PartnersAndAbout() {
   }, []);
 
   return (
-    <section className="w-full relative z-10 bg-transparent overflow-hidden stars-bg-dense pb-28">
+    <section className="w-full relative z-10 bg-transparent overflow-hidden stars-bg-dense pb-14 lg:pb-28">
       {/* --- SECTION 1: TRUSTED BY / MARQUEE LOGOS --- */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8 mb-6">
-        <h2 className="text-lg md:text-[38px]  font-medium mb-8 tracking-wide">
+      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8 mb-4 md:mb-14">
+        <h2 className="text-[22px] md:text-[38px] md:font-medium tracking-wide">
           Confían en Nosotros
         </h2>
       </div>
@@ -98,7 +98,7 @@ export default function PartnersAndAbout() {
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="w-auto object-contain"
+                className="w-28 lg:w-32 max-h-8 lg:max-h-auto lg:h-auto aspect-square object-contain"
                 onError={(e) => {
                   // Fallback string if image assets are missing during build setup
                   const target = e.target as HTMLImageElement;
@@ -118,7 +118,7 @@ export default function PartnersAndAbout() {
       </div>
 
       {/* --- SECTION 2: DIGITAL STUDIO DESCRIPTION --- */}
-      <div className="mt-[100px] w-full max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col gap-8 relative">
+      <div className="mt-[70px] lg:mt-[100px] w-full max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col gap-8 relative">
         {/* Big Bold Core Paragraph Layout */}
         <h3 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[60px] font-medium text-white tracking-tight leading-[120%] max-w-[1080px] select-none">
           <span className="text-brand-gradient">cohete</span> es un estudio de
@@ -132,7 +132,7 @@ export default function PartnersAndAbout() {
         </h3>
 
         {/* Secondary Subtext Copy */}
-        <p className="text-sm sm:text-base md:text-2xl font-normal leading-[130%]">
+        <p className="text-base md:text-2xl font-light md:font-normal md:leading-[130%]">
           Diseñamos estrategia digital, sitios e-commerce, performance media,
           CRM y chatbots con IA para marcas que operan en Estados Unidos,
           Europa, Asia y América Latina.

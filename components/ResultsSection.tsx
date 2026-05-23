@@ -1,23 +1,23 @@
 "use client";
 import React from "react";
-import ResultItem from "./ResultCard";
+import ResultCard from "./ResultCard";
 import Image from "next/image";
 
 export default function ResultsSection() {
   return (
-    <section className="pt-24 text-white">
+    <section className="pt-6 md:pt-24 text-white border-b border-b-gray-800">
       {/* Main Grid Header */}
-      <div className="mb-20">
-        <h2 className="text-4xl sm:text-5xl md:text-7xl text-center font-semibold tracking-tight text-white leading-tight">
+      <div className="mb-6 md:mb-20">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl px-20 md:px-6 text-center font-semibold tracking-tight text-white leading-tight">
           <span className="text-brand-gradient">Resultados</span> que hablan por
           nosotros.
         </h2>
       </div>
 
       {/* Main Structural Flow Stack */}
-      <div className="flex flex-col divide-y divide-white/[0.08]">
+      <div className="flex flex-col md:divide-y divide-white/[0.08]">
         {/* ROW 01: AGREGAR */}
-        <ResultItem
+        <ResultCard
           title={
             <>
               AGREGAR{" "}
@@ -32,7 +32,7 @@ export default function ResultsSection() {
         />
 
         {/* ROW 02: ESCALAR */}
-        <ResultItem
+        <ResultCard
           title={
             <>
               <span className="text-brand-gradient">ESCALAR</span> A MÁS DE{" "}
@@ -48,7 +48,7 @@ export default function ResultsSection() {
         />
 
         {/* ROW 03: ESCALAR */}
-        <ResultItem
+        <ResultCard
           title={
             <>
               <span className="text-brand-gradient">Triplicar</span> tu{" "}

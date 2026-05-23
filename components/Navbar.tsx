@@ -66,7 +66,7 @@ export default function Navbar() {
       {/* Mobile Responsive Open Menu Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-50 p-4 bg-black/40 backdrop-blur-sm md:hidden flex items-start justify-center transition-all duration-300">
-          <div className="relative w-full max-w-[480px] bg-[#0c0d12]/95 border border-white/10 rounded-[24px] p-6 flex flex-col shadow-[0_0_50px_rgba(0,223,137,0.05)] overflow-hidden">
+          <div className="relative w-full max-w-[480px] bg-[#0c0d12]/95 border border-white/90 rounded-2xl p-6 flex flex-col shadow-[0_0_50px_rgba(0,223,137,0.05)] overflow-hidden">
             {/* Glow Effect bottom-left inside card */}
             <div className="absolute -bottom-24 -left-24 w-48 h-48 rounded-full bg-[#00df89]/20 blur-[60px] pointer-events-none" />
 
@@ -121,33 +121,29 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="text-xl font-medium text-white hover:text-[#00df89] transition-colors"
               >
-                Servicios <span className="text-white/20 ml-2">/</span>
+                Servicios <span className="text-white/90 ml-2">/</span>
               </Link>
               <Link
                 href="#casos-de-estudio"
                 onClick={() => setIsOpen(false)}
                 className="text-xl font-medium text-white hover:text-[#00df89] transition-colors"
               >
-                Casos de Estudio <span className="text-white/20 ml-2">/</span>
+                Casos de Estudio <span className="text-white/90 ml-2">/</span>
               </Link>
               <Link
                 href="#contacto"
                 onClick={() => setIsOpen(false)}
                 className="text-xl font-medium text-white hover:text-[#00df89] transition-colors"
               >
-                Contacto <span className="text-white/20 ml-2">/</span>
+                Contacto <span className="text-white/90 ml-2">/</span>
               </Link>
             </div>
 
             {/* CTA Button */}
             <div className="w-full mt-auto relative z-10">
-              <Link
-                href="#propuesta"
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-center border border-[#00df89]/30 text-[#00df89] hover:text-[#00ff9d] hover:border-[#00df89] hover:bg-[#00df89]/5 text-xs font-bold uppercase tracking-wider py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,223,137,0.15)]"
-              >
+              <Button size="md" className="w-full">
                 Quiero recibir una propuesta
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
