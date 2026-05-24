@@ -20,8 +20,12 @@ export default function Home() {
         <Navbar />
         <Hero />
         <AboutAndPartners />
-        {/* <PrioritiesSection /> */}
-        <PrioritiesMobile />
+        <div className="hidden md:block">
+          <PrioritiesSection />
+        </div>
+        <div className="md:hidden">
+          <PrioritiesMobile />
+        </div>
         <ServicesSection />
         <StatsSection />
         <ResultsSection />
