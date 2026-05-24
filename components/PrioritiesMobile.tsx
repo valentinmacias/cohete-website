@@ -150,7 +150,7 @@ export default function PrioritiesMobile() {
                 Creatividad
               </motion.span>
 
-              {/* SPEED */}
+              {/* Ejecución */}
               <motion.span
                 style={{
                   opacity: speedOpacity,
@@ -159,7 +159,7 @@ export default function PrioritiesMobile() {
                 }}
                 className="text-[42px] font-medium leading-[50px] block select-none h-[50px]"
               >
-                Speed
+                Ejecución
               </motion.span>
             </motion.div>
           </div>
@@ -171,9 +171,8 @@ export default function PrioritiesMobile() {
               style={{ opacity: desc1Opacity }}
               className="text-base text-white tracking-wide font-light absolute top-0 left-0 transition-opacity duration-200"
             >
-              Hacemos un trabajo rápido y de calidad.
-              <br />
-              Manteniendo el enfoque en cada detalle.
+              Hacemos un trabajo rápido y de calidad. Manteniendo el enfoque en
+              cada detalle.
             </motion.p>
 
             {/* Descripción 2 */}
@@ -181,8 +180,8 @@ export default function PrioritiesMobile() {
               style={{ opacity: desc2Opacity }}
               className="text-base text-white tracking-wide font-light absolute top-0 left-0 transition-opacity duration-200"
             >
-              There are no random elements in our design for beauty. The main
-              idea is a functional design.
+              Hacemos un trabajo rápido y de calidad. Manteniendo el enfoque en
+              cada detalle.
             </motion.p>
 
             {/* Descripción 3 */}
@@ -190,8 +189,8 @@ export default function PrioritiesMobile() {
               style={{ opacity: desc3Opacity }}
               className="text-base text-white tracking-wide font-light absolute top-0 left-0 transition-opacity duration-200"
             >
-              Our priority is to do the project quickly, but at the same time
-              pay attention to the quality final result.
+              Hacemos un trabajo rápido y de calidad. Manteniendo el enfoque en
+              cada detalle.
             </motion.p>
           </div>
         </div>

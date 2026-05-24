@@ -147,7 +147,7 @@ export default function PrioritiesScroll() {
                   }}
                   className="text-[42px] sm:text-5xl md:text-6xl lg:text-[70px] font-medium leading-[80px] block select-none h-[80px]"
                 >
-                  Speed
+                  Ejecución
                 </motion.span>
               </motion.div>
             </div>
@@ -168,9 +168,8 @@ export default function PrioritiesScroll() {
                 style={{ opacity: desc2Opacity }}
                 className="text-base md:text-xl tracking-wide font-light max-w-[500px] absolute top-0 left-0 transition-opacity duration-200"
               >
-                There are no random elements in our design for beauty. The main
-                idea is a functional design that must first and foremost solve
-                the user's problem.
+                Hacemos un trabajo rápido y de calidad. Manteniendo el enfoque
+                en cada detalle.
               </motion.p>
 
               {/* Description 3 */}
@@ -178,8 +177,8 @@ export default function PrioritiesScroll() {
                 style={{ opacity: desc3Opacity }}
                 className="text-base md:text-xl tracking-wide font-light max-w-[500px] absolute top-0 left-0 transition-opacity duration-200"
               >
-                Our priority is to do the project quickly, but at the same time
-                pay attention to the quality final result.
+                Hacemos un trabajo rápido y de calidad. Manteniendo el enfoque
+                en cada detalle.
               </motion.p>
             </div>
           </div>
