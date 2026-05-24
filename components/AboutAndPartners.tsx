@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import AboutAndDescription from "./AboutAndDescription";
 
 const partners = [
   { name: "Bathinda", src: "/logos/BATHINDA.webp" },
@@ -104,27 +105,7 @@ export default function PartnersAndAbout() {
         </div>
       </div>
 
-      {/* --- SECTION 2: DIGITAL STUDIO DESCRIPTION --- */}
-      <div className="mt-[70px] lg:mt-[100px] w-full max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col gap-8 relative">
-        {/* Big Bold Core Paragraph Layout */}
-        <h3 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[60px] font-medium text-white tracking-tight leading-[120%] max-w-[1080px] select-none">
-          <span className="text-brand-gradient">cohete</span> es un estudio de
-          performance digital que{" "}
-          <span className="text-brand-gradient">convierte</span> estrategia en{" "}
-          <span className="text-brand-gradient">
-            acturación, escala y posicionamiento
-          </span>{" "}
-          para las empresas{" "}
-          <span className="text-brand-gradient">más exigentes.</span>
-        </h3>
-
-        {/* Secondary Subtext Copy */}
-        <p className="text-base md:text-2xl font-light md:font-normal md:leading-[130%]">
-          Diseñamos estrategia digital, sitios e-commerce, performance media,
-          CRM y chatbots con IA para marcas que operan en Estados Unidos,
-          Europa, Asia y América Latina.
-        </p>
-      </div>
+      <AboutAndDescription />
     </section>
   );
 }
