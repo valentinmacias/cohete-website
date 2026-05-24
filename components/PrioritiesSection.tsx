@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+// import { FadeInUp } from "./animation/FadeInUp";
 
 export default function PrioritiesScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -64,7 +65,7 @@ export default function PrioritiesScroll() {
 
   return (
     <div ref={containerRef} className="relative h-[300vh]">
-      <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
+      <div className="sticky top-0 h-[100dvh] w-full flex items-center overflow-hidden">
         
         {/* Background Lights */}
         <div className="absolute inset-0 pointer-events-none z-10">
@@ -78,17 +79,19 @@ export default function PrioritiesScroll() {
         </div>
 
         {/* Content Layout */}
-        <div className="relative z-20 w-full max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col md:flex-row gap-10 md:gap-24 items-start">
+        <div className="relative z-20 w-full max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col md:flex-row gap-6 md:gap-24 items-start">
           
           {/* Static Left Title */}
-          <div className="flex-shrink-0 md:w-1/3 pt-10">
-            <h2 className="text-[42px] sm:text-5xl md:text-6xl lg:text-[70px] font-medium leading-[120%] text-white">
+          <div className="flex-shrink-0 md:w-1/3 pt-4 md:pt-10">
+           {/* <FadeInUp> */}
+             <h2 className="text-[42px] sm:text-5xl md:text-6xl lg:text-[70px] font-medium leading-[120%] text-white">
               Nuestras Prioridades
             </h2>
+           {/* </FadeInUp> */}
           </div>
 
           {/* Dynamic Scroll Window Container */}
-          <div className="flex flex-col items-start h-[450px] md:w-2/3 justify-start relative pt-10">
+          <div className="flex flex-col items-start h-auto md:h-[450px] w-full md:w-2/3 justify-start relative pt-2 md:pt-10">
             
             {/* Mask Window Box */}
             <div className="relative h-[85px] w-full">
@@ -138,7 +141,7 @@ export default function PrioritiesScroll() {
             </div>
 
             {/* Sub-Description Window (Spacer handled via mt) */}
-            <div className="relative min-h-[120px] w-full mt-16 md:mt-24">
+            <div className="relative min-h-[160px] md:min-h-[120px] w-full mt-8 md:mt-24">
               {/* Description 1 */}
               <motion.p
                 style={{ opacity: desc1Opacity }}

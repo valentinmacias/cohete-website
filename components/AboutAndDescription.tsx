@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function AboutAndDescription() {
   // Container variants that control the staggering cascade across all children sequentially
@@ -15,7 +15,7 @@ export default function AboutAndDescription() {
   };
 
   // Headline single-character fade-in and micro slide-up
-  const charVariants = {
+  const charVariants:Variants = {
     hidden: { opacity: 0, y: 8 },
     visible: {
       opacity: 1,
@@ -28,7 +28,7 @@ export default function AboutAndDescription() {
   };
 
   // Bottom paragraph word-by-word smooth reveal matching the video cadence
-  const wordVariants = {
+  const wordVariants:Variants = {
     hidden: { opacity: 0, y: 5 },
     visible: {
       opacity: 0.8, // Slightly softer opacity for subtext as seen in premium layouts
