@@ -34,14 +34,14 @@ export default function PartnersAndAbout() {
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
     const speedMap: Record<number, number> = {
-      25: isSafari ? 1.5 : 0.9,
+      25: isSafari ? 1.05 : 0.63,
       35: isSafari ? 1 : 0.65,
       45: isSafari ? 0.65 : 0.45,
     };
 
     const speed =
       speedMap[durationInSeconds] ||
-      (isSafari ? 40 / durationInSeconds : 25 / durationInSeconds);
+      (isSafari ? 28 / durationInSeconds : 17.5 / durationInSeconds);
 
     let scrollPosition = 0;
     let animationFrameId: number;

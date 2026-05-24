@@ -9,26 +9,29 @@ export default function AboutAndDescription() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.02, // The subtle typing delay between each single unit (chars then words)
+        staggerChildren: 0.04, // The typing cadence delay between each word block
       },
     },
   };
 
-  // Headline single-character fade-in and micro slide-up
-  const charVariants:Variants = {
-    hidden: { opacity: 0, y: 8 },
+  // Pure layout fade up without any background or color animations
+  const wordBlockVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 8,
+    },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.6,
         ease: [0.215, 0.61, 0.355, 1],
       },
     },
   };
 
   // Bottom paragraph word-by-word smooth reveal matching the video cadence
-  const wordVariants:Variants = {
+  const wordVariants: Variants = {
     hidden: { opacity: 0, y: 5 },
     visible: {
       opacity: 0.8, // Slightly softer opacity for subtext as seen in premium layouts
@@ -51,17 +54,20 @@ export default function AboutAndDescription() {
     { text: "más exigentes.", isGradient: true },
   ];
 
-  // Flatten segments into individual characters
-  const flattenedChars = textSegments.reduce<{ char: string; isGradient: boolean }[]>(
-    (acc, segment) => {
-      const chars = segment.text.split("").map((char) => ({
-        char,
-        isGradient: segment.isGradient,
-      }));
-      return [...acc, ...chars];
-    },
-    []
-  );
+  // Pre-process elements into individual structural words/whitespaces to preserve flow sequence
+  const flatWordsList: { text: string; isGradient: boolean }[] = [];
+
+  textSegments.forEach((segment) => {
+    const tokens = segment.text.split(/(\s+)/);
+    tokens.forEach((token) => {
+      if (token.length > 0) {
+        flatWordsList.push({
+          text: token,
+          isGradient: segment.isGradient && token.trim() !== "",
+        });
+      }
+    });
+  });
 
   // Split bottom paragraph text into individual words
   const subtextParagraph =
@@ -77,17 +83,32 @@ export default function AboutAndDescription() {
       className="mt-[70px] lg:mt-[100px] w-full max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col gap-8 relative"
     >
       {/* Big Bold Core Paragraph Layout */}
-      <h3 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[60px] font-medium text-white tracking-tight leading-[120%] max-w-[1080px] select-none">
-        {flattenedChars.map((item, index) => (
-          <motion.span
-            key={`char-${index}`}
-            variants={charVariants}
-            className={`inline-block ${item.isGradient ? "text-brand-gradient" : ""}`}
-            style={{ whiteSpace: item.char === " " ? "pre" : "normal" }}
-          >
-            {item.char}
-          </motion.span>
-        ))}
+      <h3 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[60px] font-medium text-white tracking-tight leading-[120%] max-w-[1080px] select-none flex flex-wrap">
+        {flatWordsList.map((item, index) => {
+          if (item.isGradient) {
+            return (
+              <motion.span
+                key={`word-${index}`}
+                variants={wordBlockVariants}
+                className="inline-block text-brand-gradient"
+                style={{ whiteSpace: "pre" }}
+              >
+                {item.text}
+              </motion.span>
+            );
+          }
+
+          return (
+            <motion.span
+              key={`word-${index}`}
+              variants={wordBlockVariants}
+              className="inline-block text-white"
+              style={{ whiteSpace: "pre" }}
+            >
+              {item.text}
+            </motion.span>
+          );
+        })}
       </h3>
 
       {/* Secondary Subtext Copy - Word by Word reveal */}

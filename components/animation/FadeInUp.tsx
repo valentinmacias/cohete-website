@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ReactNode } from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
 
@@ -8,11 +8,11 @@ interface FadeInUpProps extends HTMLMotionProps<"div"> {
   duration?: number; // Optional duration in seconds
 }
 
-export function FadeInUp({ 
-  children, 
-  delay = 0, 
-  duration = 0.6, 
-  ...props 
+export function FadeInUp({
+  children,
+  delay = 0.15,
+  duration = 0.6,
+  ...props
 }: FadeInUpProps) {
   return (
     <motion.div

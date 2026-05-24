@@ -7,6 +7,7 @@ import ResultsSection from "@/components/ResultsSection";
 import StatsSection from "@/components/StatsSection";
 import PrioritiesSection from "@/components/PrioritiesSection";
 import SpaceBackground from "@/components/SpaceBackground"; // Import here
+import PrioritiesMobile from "@/components/PrioritiesMobile";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
         <Navbar />
         <Hero />
         <AboutAndPartners />
-        <PrioritiesSection />
+        {/* <PrioritiesSection /> */}
+        <PrioritiesMobile />
         <ServicesSection />
         <StatsSection />
         <ResultsSection />

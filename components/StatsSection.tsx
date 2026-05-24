@@ -1,12 +1,5 @@
-import React from "react";
 import StatItem from "./StatItem";
 import { FadeInUp } from "./animation/FadeInUp";
-
-interface StatItemProps {
-  number: string;
-  label: string;
-  showDivider?: boolean;
-}
 
 export default function StatsSection() {
   return (
@@ -15,17 +8,17 @@ export default function StatsSection() {
       <div className="w-full text-center mb-16 md:mb-24">
         <FadeInUp>
           <h2 className="text-4xl md:text-7xl font-semibold">
-          No prometemos,{" "}
-          <span className="text-brand-gradient">ejecutamos.</span>
-        </h2>
-          </FadeInUp>
+            No prometemos,{" "}
+            <span className="text-brand-gradient">ejecutamos.</span>
+          </h2>
+        </FadeInUp>
       </div>
 
       {/* STRATEGIC LAYOUT GRID */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
         {/* LEFT COLUMN: METRICS STACK (Spans 5 out of 12 columns on desktop) */}
         <div className="order-last md:order-first md:col-span-5 flex flex-col space-y-6 md:pr-4">
-          <StatItem number="+15.000" label="Anuncios Lanzados" />
+          <StatItem number="+15000" label="Anuncios Lanzados" />
           <StatItem number="+250" label="Sitios Webs Creados" />
           <StatItem
             number="4"

@@ -59,10 +59,10 @@ export default function ContactSection() {
         <div className="md:col-span-5 flex flex-col">
           <FadeInUp>
             <h2 className="text-4xl sm:text-5xl font-semibold tracking-wide text-white uppercase leading-[1.1]">
-            HAGAMOS <br />
-            <span className="text-brand-gradient">DESPEGAR</span> TU <br />
-            NEGOCIO.
-          </h2>
+              HAGAMOS <br />
+              <span className="text-brand-gradient">DESPEGAR</span> TU <br />
+              NEGOCIO.
+            </h2>
           </FadeInUp>
 
           {/* Hardware accelerated container for the rocket mockup graphic */}
@@ -96,97 +96,100 @@ export default function ContactSection() {
 
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Question 1 */}
-                <div className="flex flex-col space-y-2">
-              <FadeInUp>
-                  <label className="text-sm text-[#F1F1F1]">¿Qué vendés? *</label>
+              <div className="flex flex-col space-y-2">
+                <FadeInUp>
+                  <label className="text-sm text-[#F1F1F1]">
+                    ¿Qué vendés? *
+                  </label>
                   <input
                     type="text"
                     placeholder="Accesorios de moda"
                     required
-                  value={formData.queVendes}
-                  onChange={(e) =>
-                    setFormData({ ...formData, queVendes: e.target.value })
-                  }
-                  className="w-full bg-transparent border-b border-gray-700 focus:border-[#00ffcc] py-2 text-white placeholder-[#707070] outline-none transition-colors duration-300 text-sm sm:text-base"
-                />
-            </FadeInUp>
+                    value={formData.queVendes}
+                    onChange={(e) =>
+                      setFormData({ ...formData, queVendes: e.target.value })
+                    }
+                    className="w-full bg-transparent border-b border-gray-700 focus:border-[#00ffcc] py-2 text-white placeholder-[#707070] outline-none transition-colors duration-300 text-sm sm:text-base"
+                  />
+                </FadeInUp>
               </div>
 
               {/* Question 2 */}
               <div className="flex flex-col space-y-2">
                 <FadeInUp>
-                <label className="text-sm text-[#F1F1F1]">
-                  Cuenta de Instagram de tu negocio (Opcional)
-                </label>
-                <input
-                  type="text"
-                  placeholder="@minegocio"
-                  value={formData.instagram}
-                  onChange={(e) =>
-                    setFormData({ ...formData, instagram: e.target.value })
-                  }
-                  className="w-full bg-transparent border-b border-gray-700 focus:border-[#00ffcc] py-2 text-white placeholder-[#707070] outline-none transition-colors duration-300 text-sm sm:text-base"
-                />
+                  <label className="text-sm text-[#F1F1F1]">
+                    Cuenta de Instagram de tu negocio (Opcional)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="@minegocio"
+                    value={formData.instagram}
+                    onChange={(e) =>
+                      setFormData({ ...formData, instagram: e.target.value })
+                    }
+                    className="w-full bg-transparent border-b border-gray-700 focus:border-[#00ffcc] py-2 text-white placeholder-[#707070] outline-none transition-colors duration-300 text-sm sm:text-base"
+                  />
                 </FadeInUp>
               </div>
 
               {/* Question 3 */}
               <div className="flex flex-col space-y-2">
                 <FadeInUp>
-                <label className="text-sm text-[#F1F1F1]">
-                  Teléfono de contacto *
-                </label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="3541 37-1673"
-                  value={formData.telefono}
-                  onChange={(e) =>
-                    setFormData({ ...formData, telefono: e.target.value })
-                  }
-                  className="w-full bg-transparent border-b border-gray-700 focus:border-[#00ffcc] py-2 text-white placeholder-[#707070] outline-none transition-colors duration-300 text-sm sm:text-base"
-                />
+                  <label className="text-sm text-[#F1F1F1]">
+                    Teléfono de contacto *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="3541 37-1673"
+                    value={formData.telefono}
+                    onChange={(e) =>
+                      setFormData({ ...formData, telefono: e.target.value })
+                    }
+                    className="w-full bg-transparent border-b border-gray-700 focus:border-[#00ffcc] py-2 text-white placeholder-[#707070] outline-none transition-colors duration-300 text-sm sm:text-base"
+                  />
                 </FadeInUp>
               </div>
 
               {/* Question 4 */}
               <div className="flex flex-col space-y-2">
                 <FadeInUp>
-                <label className="text-sm text-[#F1F1F1]">
-                  Mensaje (Opcional)
-                </label>
-                <textarea
-                  placeholder="Quiero conocer más acerca de sus servicios..."
-                  value={formData.mensaje}
-                  onChange={(e) =>
-                    setFormData({ ...formData, mensaje: e.target.value })
-                  }
-                  className="w-full bg-transparent border-b border-gray-700 focus:border-[#00ffcc] py-2 text-white placeholder-[#707070] outline-none transition-colors duration-300 text-sm sm:text-base h-20"
-                />
+                  <label className="text-sm text-[#F1F1F1]">
+                    Mensaje (Opcional)
+                  </label>
+                  <textarea
+                    placeholder="Quiero conocer más acerca de sus servicios..."
+                    value={formData.mensaje}
+                    onChange={(e) =>
+                      setFormData({ ...formData, mensaje: e.target.value })
+                    }
+                    className="w-full bg-transparent border-b border-gray-700 focus:border-[#00ffcc] py-2 text-white placeholder-[#707070] outline-none transition-colors duration-300 text-sm sm:text-base h-20"
+                  />
                 </FadeInUp>
               </div>
 
               {/* Submit CTA Button */}
-             <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-4">
                 <FadeInUp>
-                <div>
-                  <button
-                    type="submit"
-                    className={`inline-block border text-sm leading-normal tracking-widest uppercase py-3.5 px-7 rounded-full transition-all duration-300 transform whitespace-nowrap
-                      ${loading 
-                        ? "border-gray-700 bg-gray-800/40 text-gray-500 cursor-not-allowed animate-pulse scale-100" 
-                        : "border-primary/70 bg-gradient-to-r from-[#06FAC3]/10 to-[#05C499]/10 hover:bg-[#00ffcc]/20 text-[#00ffcc] hover:shadow-[0_0_20px_rgba(0,255,204,0.2)] active:scale-95 cursor-pointer"
+                  <div>
+                    <button
+                      type="submit"
+                      className={`inline-block border text-xs md:text-sm leading-normal tracking-widest uppercase py-3.5 px-5 md:px-7 rounded-full transition-all duration-300 transform whitespace-nowrap
+                      ${
+                        loading
+                          ? "border-gray-700 bg-gray-800/40 text-gray-500 cursor-not-allowed animate-pulse scale-100"
+                          : "border-primary/70 bg-gradient-to-r from-[#06FAC3]/10 to-[#05C499]/10 hover:bg-[#00ffcc]/20 text-[#00ffcc] hover:shadow-[0_0_20px_rgba(0,255,204,0.2)] active:scale-95 cursor-pointer"
                       }`}
-                    disabled={loading}
-                  >
-                    QUIERO RECIBIR UNA PROPUESTA 
-                  </button>
-                </div>
-                {isSuccess && (
-                  <p className="text-sm text-[#00ffcc] font-medium tracking-wide">
-                    Muchas gracias. Nos comunicaremos contigo.
-                  </p>
-                )}
+                      disabled={loading}
+                    >
+                      QUIERO RECIBIR UNA PROPUESTA
+                    </button>
+                  </div>
+                  {isSuccess && (
+                    <p className="text-sm text-[#00ffcc] font-medium tracking-wide">
+                      Muchas gracias. Nos comunicaremos contigo.
+                    </p>
+                  )}
                 </FadeInUp>
               </div>
             </form>
@@ -195,12 +198,12 @@ export default function ContactSection() {
 
         <div className="md:hidden relative w-full max-w-[500px] mx-auto md:mx-0 flex items-center">
           <FadeInUp>
-          <img
-            src="/Rocket_dark 1.png"
-            alt="Propulsion rocket illustration"
-            className="w-[70%] h-fit object-contain"
-            style={{ animationDuration: "4s" }}
-          />
+            <img
+              src="/Rocket_dark 1.png"
+              alt="Propulsion rocket illustration"
+              className="w-[70%] h-fit object-contain"
+              style={{ animationDuration: "4s" }}
+            />
           </FadeInUp>
         </div>
       </div>
