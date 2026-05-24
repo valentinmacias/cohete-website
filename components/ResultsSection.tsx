@@ -1,4 +1,5 @@
 "use client";
+import { FadeInUp } from "./animation/FadeInUp";
 import ResultCard from "./ResultCard";
 
 export default function ResultsSection() {
@@ -9,10 +10,12 @@ export default function ResultsSection() {
     >
       {/* Main Grid Header */}
       <div className="mb-6 md:mb-20">
-        <h2 className="text-4xl sm:text-5xl md:text-7xl px-20 md:px-6 text-center font-semibold tracking-tight text-white leading-tight">
+        <FadeInUp>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl px-20 md:px-6 text-center font-semibold tracking-tight text-white leading-tight">
           <span className="text-brand-gradient">Resultados</span> que hablan por
           nosotros.
         </h2>
+        </FadeInUp>
       </div>
 
       {/* Main Structural Flow Stack */}

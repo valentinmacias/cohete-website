@@ -1,4 +1,6 @@
 import React from "react";
+import StatItem from "./StatItem";
+import { FadeInUp } from "./animation/FadeInUp";
 
 interface StatItemProps {
   number: string;
@@ -6,34 +8,17 @@ interface StatItemProps {
   showDivider?: boolean;
 }
 
-// Sub-component for individual metric items to keep code clean and manageable
-function StatItem({ number, label, showDivider = true }: StatItemProps) {
-  return (
-    <div className="w-full space-y-6 md:space-y-12">
-      <div className="space-y-3">
-        <span className="text-brand-gradient font-semibold text-5xl md:text-6xl block tracking-tight">
-          {number}
-        </span>
-        <p className="text-white text-base md:text-2xl tracking-wide">
-          {label}
-        </p>
-      </div>
-      {showDivider && (
-        <hr className="border-t-2 border-white/30 w-full pt-2 md:pt-8 mt-4" />
-      )}
-    </div>
-  );
-}
-
 export default function StatsSection() {
   return (
     <section className="w-full max-w-[1200px] mx-auto px-6 py-16 text-white selection:bg-primary/30">
       {/* SECTION HEADER */}
       <div className="w-full text-center mb-16 md:mb-24">
-        <h2 className="text-4xl md:text-7xl font-semibold">
+        <FadeInUp>
+          <h2 className="text-4xl md:text-7xl font-semibold">
           No prometemos,{" "}
           <span className="text-brand-gradient">ejecutamos.</span>
         </h2>
+          </FadeInUp>
       </div>
 
       {/* STRATEGIC LAYOUT GRID */}
