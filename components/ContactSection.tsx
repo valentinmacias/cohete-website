@@ -10,12 +10,14 @@ export default function ContactSection() {
     mensaje: "",
   });
   const [loading, setLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
       setLoading(true);
+      setIsSuccess(false);
 
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -28,7 +30,7 @@ export default function ContactSection() {
       const data = await res.json();
 
       if (data.success) {
-        alert("Message sent successfully 🚀");
+        setIsSuccess(true);
 
         setFormData({
           queVendes: "",
@@ -148,14 +150,25 @@ export default function ContactSection() {
               </div>
 
               {/* Submit CTA Button */}
-              <div>
-                <button
-                  type="submit"
-                  className="inline-block border border-primary/70 bg-gradient-to-r from-[#06FAC3]/10 to-[#05C499]/10 hover:bg-[#00ffcc]/20 text-[#00ffcc] text-sm leading-normal tracking-widest uppercase py-3.5 px-7 rounded-full hover:shadow-[0_0_20px_rgba(0,255,204,0.2)] transition-all duration-300 transform active:scale-95 whitespace-nowrap cursor-pointer"
-                  disabled={loading}
-                >
-                  {loading ? "ENVIANDO..." : "QUIERO RECIBIR UNA PROPUESTA"}
-                </button>
+             <div className="flex flex-col space-y-4">
+                <div>
+                  <button
+                    type="submit"
+                    className={`inline-block border text-sm leading-normal tracking-widest uppercase py-3.5 px-7 rounded-full transition-all duration-300 transform whitespace-nowrap
+                      ${loading 
+                        ? "border-gray-700 bg-gray-800/40 text-gray-500 cursor-not-allowed animate-pulse scale-100" 
+                        : "border-primary/70 bg-gradient-to-r from-[#06FAC3]/10 to-[#05C499]/10 hover:bg-[#00ffcc]/20 text-[#00ffcc] hover:shadow-[0_0_20px_rgba(0,255,204,0.2)] active:scale-95 cursor-pointer"
+                      }`}
+                    disabled={loading}
+                  >
+                    QUIERO RECIBIR UNA PROPUESTA 
+                  </button>
+                </div>
+                {isSuccess && (
+                  <p className="text-sm text-[#00ffcc] font-medium tracking-wide">
+                    Muchas gracias. Nos comunicaremos contigo.
+                  </p>
+                )}
               </div>
             </form>
           </div>
